@@ -1,0 +1,341 @@
+
+/*--For Grid Areas--*/
+
+  footer, header, main, nav {
+    border-bottom: 5px solid #000000;
+    }
+
+/*--For General CSS Code--*/
+
+  body {
+    background: #ffffff;
+    font-family: Trebuchet MS;
+    margin: 0;
+    }
+
+  figure {
+    color: #000000;
+    padding: 15px;
+    border: 2px solid #ffffff;
+    }
+    
+  figure a {
+    font-weight: bold;
+    color: #0e5073;
+  }
+
+  footer {
+    grid-area: footer;
+    background: #4f8ca6; /*light blue*/
+    padding: 5px;
+    text-align: center;
+    }
+
+    footer p {
+      font-size: 1em;
+      color: #ffffff;
+      margin: 0;
+      }
+
+  header {
+    grid-area: header;
+    background: #4f8ca6; /*light blue*/
+    text-align: center;
+    color: #ffffff;
+    }
+
+    header h1 {
+      color: #ffffff;
+      text-shadow: 6px 6px 12px #0e5073; /*dark blue*/
+      margin: 0;
+    }
+      
+  .homefigB {
+    grid-area: homefigB;
+    background: #cac537; /*green yellow*/
+  }
+  
+  .homefigC {
+    grid-area: homefigC;
+    background: #cac537; /*green yellow*/
+  }
+  
+  .homefigD {
+    grid-area: homefigD;
+    background: #cac537; /*green yellow*/
+  }
+  
+  img {
+    max-width: 100%;
+    margin: auto;
+    }
+
+  .logo {
+    max-width: 100%;
+    width:25vmax;
+    margin: 15px;
+    }
+
+  main {
+    grid-area: main;
+    background: #bf212e; /*red*/
+    padding: 10px;
+    text-align: center;
+    }
+    
+  nav {
+    grid-area: nav;
+    background: #cac537; /*green yellow*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 5px solid #000000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.5em;
+      }
+
+    nav a:hover {
+      text-shadow: 2px 2px 5px #bf212e; /*red*/
+      }
+
+    nav li {
+      padding: 10px 10px;
+      list-style-type: none;
+      }
+      
+  section {
+    grid-area: section;
+    color: #ffffff;
+    }
+  
+    section a {
+      color: #ffffff;
+      font-weight: bold;
+      }
+  
+    section h2 {
+      text-shadow: 2px 2px 5px #0e5073; /*dark blue*/
+      }
+    
+
+/*---------------------------Mobile Layout----------------------------*/
+
+  @media only screen and (min-width: 300px)  {
+  .container1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "main"
+      "footer";
+    }
+    
+    .homenestedgrid {
+      display:grid;
+      grid-template-columns:100%;
+      grid-template-areas:
+        "section"
+        "homefigB"
+        "homefigC"
+        "homefigD";
+      }
+      
+    footer, header, main, nav {
+    border-bottom: 2px solid #000000;
+    }
+    
+    nav a {
+      font-size: .75em;
+    }
+    
+    header h1 {
+      font-size: 1em;
+      }
+
+    header h2 {
+      font-size:.5em;
+      }
+      
+    .logo {
+    width:35vmax;
+    margin: 8px;
+    }
+    
+  }
+
+  
+  /*--This stuff is for the hamburger menu--*/
+  
+    .toggleNav {
+      display: grid; /*--This is what allows the hamburger icon and "Menu" to display--*/
+      text-align: center;
+      font-size: .75em;
+      font-weight: bold;
+      padding: 5px;
+      }
+
+    #flex-nav ul {
+      display: none; /*--jQuery toggles the nav from to this class to the .open when clicked--*/
+      text-align: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      }
+ 
+    #flex-nav ul.open { /*--.open is the class that gets toggled when clicked (with help from the jQuery code)--*/
+      display: grid;
+      }
+    
+    #flex-nav li {
+      padding-left: 10px;
+      padding-top: 10px;
+      }
+      
+  /*--This makes the nav stacked in moblie and tablet--*/
+    
+    .first {
+      grid-area: first;
+      margin-left: 0;
+      }
+ 
+    .second {
+      grid-area: second;
+      }
+
+    .third {
+      grid-area: third;
+      }
+
+    .fourth {
+      grid-area: fourth;
+      }
+
+    .fifth {
+      grid-area: fifth;
+      }
+        
+    .sixth {
+      grid-area: sixth;
+      }
+
+    .seventh {
+      grid-area: seventh;
+      }
+
+    #navwrapper {
+      display: grid;
+      grid-template-areas:
+        "first"
+        "second"
+        "third"
+        "fourth"
+        "fifth"
+        "sixth"
+        "seventh";
+      }
+  
+  
+/*-----------------------Tablet Media Query------------------------*/
+
+  @media only screen and (min-width: 480px)  {
+  
+    .container1 { /*for later*/
+      grid-template-columns: auto;
+      grid-template-areas:
+        "nav"
+        "header"
+        "main"
+        "footer;
+      }
+      
+      .homenestedgrid {
+        display:grid;
+        grid-template-columns:100%;
+        grid-template-areas:
+          "section"
+          "homefigB"
+          "homefigC"
+          "homefigD";
+        }
+        
+    footer, header, main, nav {
+    border-bottom: 3px solid #000000;
+    }
+    
+    nav a {
+      font-size: 2em;
+    }
+        
+    header h1 {
+      font-size: 1.5em;
+      }
+
+    header h2 {
+      font-size: .75em;
+      }
+
+/*-----------------------Desktop Media Query------------------------*/
+
+  @media only screen and (min-width: 960px)  {
+
+    .container1 { /*for later*/
+      grid-template-columns: auto;
+      grid-template-areas:
+        "nav"
+        "header"
+        "main"
+        "footer;
+      }
+      
+      .homenestedgrid {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "section section section"
+          "homefigB homefigC homefigD";
+        }
+        
+      footer, header, main, nav {
+    border-bottom: 6px solid #000000;
+    }
+    
+        nav a {
+      font-size: 1.5em;
+    }
+        
+        header h1 {
+      font-size: 2.75em;
+      }
+
+    header h2 {
+      font-size: 1.50em;
+      }
+  
+  /*--This makes nav vertical at top of page--*/
+  
+    #navwrapper {
+      display: grid;
+      grid-template-areas:
+        "first second third fourth fifth sixth seventh";
+      }
+    
+    .toggleNav {
+      display: none; /*--Makes the hamburger icon with the word "Menu" to disappear at this screen size--*/
+      }
+  
+    #flex-nav ul {
+      display: grid;
+      text-align: center;
+      }
+
+    #flex-nav li {
+      padding-top: 10px;
+      }
+      
+    }
